@@ -1,74 +1,80 @@
 {
   "screen": {
     "id": "home",
-    "version": "1.0",
+    "version": "1.1",
     "components": [
       {
         "type": "header",
-        "title": "Good Morning",
-        "subtitle": "Find your next car"
+        "location": "New Delhi",
+        "profileIcon": "person"
       },
       {
         "type": "search",
-        "placeholder": "Search for cars..."
+        "placeholder": "Search Alto",
+        "backgroundColor": "#3E41C1"
       },
       {
-        "type": "category_tabs",
-        "selectedIndex": 0,
-        "tabs": [
-          {
-            "title": "Buy"
-          },
-          {
-            "title": "Sell"
-          },
-          {
-            "title": "Finance"
-          }
+        "type": "icon_row",
+        "backgroundColor": "#3E41C1",
+        "items": [
+          { "title": "All", "icon": "grid", "isSelected": true },
+          { "title": "Buy used car", "icon": "car" },
+          { "title": "Sell car", "icon": "sell" },
+          { "title": "Loans", "icon": "loan" },
+          { "title": "Challan", "icon": "receipt" }
         ]
       },
       {
         "type": "section",
-        "title": "Popular Cars",
+        "title": "Buy car",
+        "titleBadge": "Up to ₹80,000 off",
+        "itemStyle": "colored",
         "items": [
-          {
-            "type": "car_card",
-            "id": "1",
-            "title": "Hyundai Creta",
-            "subtitle": "2022 • Petrol • Automatic",
-            "price": "₹12.5 Lakh",
-            "image": "https://example.com/creta.jpg"
-          },
-          {
-            "type": "car_card",
-            "id": "2",
-            "title": "Honda City",
-            "subtitle": "2021 • Petrol • Manual",
-            "price": "₹9.8 Lakh",
-            "image": "https://example.com/city.jpg"
-          }
+          { "id": "1", "title": "All used cars", "backgroundColor": "#003087", "image": "car1" },
+          { "id": "2", "title": "Budget used cars", "backgroundColor": "#003087", "image": "car2" },
+          { "id": "3", "title": "Premium used cars", "backgroundColor": "#003087", "image": "car3" }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Sell your car",
+        "itemStyle": "colored",
+        "items": [
+          { "id": "4", "title": "Sell your car", "backgroundColor": "#2E7D32", "image": "sell1" },
+          { "id": "5", "title": "Check car valuation", "backgroundColor": "#2E7D32", "image": "val1" },
+          { "id": "6", "title": "Scrap your car", "backgroundColor": "#2E7D32", "image": "scrap1" }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Get loans",
+        "itemStyle": "circular",
+        "items": [
+          { "id": "7", "title": "Used car loan", "image": "loan1" },
+          { "id": "8", "title": "Loan against car", "image": "loan2" },
+          { "id": "9", "title": "Personal loan", "image": "loan3" }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Car check services",
+        "itemStyle": "grid",
+        "items": [
+          { "id": "10", "title": "New car PDI", "backgroundColor": "#FFF9C4", "image": "pdi" },
+          { "id": "11", "title": "Used car check", "backgroundColor": "#FFF9C4", "image": "check" },
+          { "id": "12", "title": "Vehicle history", "backgroundColor": "#FFF9C4", "image": "history" },
+          { "id": "13", "title": "Check challan", "backgroundColor": "#FFF9C4", "image": "challan" }
         ]
       },
       {
         "type": "bottom_navigation",
         "selectedIndex": 0,
         "items": [
-          {
-            "title": "Home",
-            "icon": "home"
-          },
-          {
-            "title": "Buy",
-            "icon": "car"
-          },
-          {
-            "title": "Sell",
-            "icon": "sell"
-          },
-          {
-            "title": "Profile",
-            "icon": "person"
-          }
+          { "title": "Home", "icon": "home" },
+          { "title": "Activity", "icon": "history" },
+          { "title": "My Garage", "icon": "car_repair" },
+          { "title": "Showrooms", "icon": "store" },
+          { "title": "Explore", "icon": "explore" }
         ]
       }
     ]
