@@ -67,6 +67,16 @@
         ]
       },
       {
+        "type": "tenure_selector",
+        "label": "Loan Tenure",
+        "options": ["1 Year", "2 Years", "3 Years", "5 Years"],
+        "selectedIndex": 2
+      },
+      {
+        "type": "unknown",
+        "message": "This is an unknown component test"
+      },
+      {
         "type": "bottom_navigation",
         "selectedIndex": 0,
         "items": [
