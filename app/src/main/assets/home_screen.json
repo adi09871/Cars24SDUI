@@ -1,0 +1,76 @@
+{
+  "screen": {
+    "id": "home",
+    "version": "1.0",
+    "components": [
+      {
+        "type": "header",
+        "title": "Good Morning",
+        "subtitle": "Find your next car"
+      },
+      {
+        "type": "search",
+        "placeholder": "Search for cars..."
+      },
+      {
+        "type": "category_tabs",
+        "selectedIndex": 0,
+        "tabs": [
+          {
+            "title": "Buy"
+          },
+          {
+            "title": "Sell"
+          },
+          {
+            "title": "Finance"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Popular Cars",
+        "items": [
+          {
+            "type": "car_card",
+            "id": "1",
+            "title": "Hyundai Creta",
+            "subtitle": "2022 • Petrol • Automatic",
+            "price": "₹12.5 Lakh",
+            "image": "https://example.com/creta.jpg"
+          },
+          {
+            "type": "car_card",
+            "id": "2",
+            "title": "Honda City",
+            "subtitle": "2021 • Petrol • Manual",
+            "price": "₹9.8 Lakh",
+            "image": "https://example.com/city.jpg"
+          }
+        ]
+      },
+      {
+        "type": "bottom_navigation",
+        "selectedIndex": 0,
+        "items": [
+          {
+            "title": "Home",
+            "icon": "home"
+          },
+          {
+            "title": "Buy",
+            "icon": "car"
+          },
+          {
+            "title": "Sell",
+            "icon": "sell"
+          },
+          {
+            "title": "Profile",
+            "icon": "person"
+          }
+        ]
+      }
+    ]
+  }
+}
