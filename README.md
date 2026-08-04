@@ -39,7 +39,6 @@ app/
 │   │   │   │   └── repository/
 │   │   │   │
 │   │   │   ├── sdui/
-│   │   │   │   ├── actions/
 │   │   │   │   ├── registry/
 │   │   │   │   └── renderer/
 │   │   │   │
@@ -52,6 +51,8 @@ app/
 │   │   │
 │   │   └── res/
 ```
+
+This looks cleaner and is appropriate for the current phase of the project. You can always add an actions/ package later if you implement JSON-driven click/navigation actions.
 
 ## SDUI Workflow
 
