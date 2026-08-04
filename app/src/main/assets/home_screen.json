@@ -30,7 +30,7 @@
         "titleBadge": "Up to ₹80,000 off",
         "itemStyle": "colored",
         "items": [
-          { "id": "1", "title": "All used cars", "backgroundColor": "#003087", "image": "car1" },
+          { "id": "1", "title": "All", "backgroundColor": "#003087", "image": "car1" },
           { "id": "2", "title": "Budget used cars", "backgroundColor": "#003087", "image": "car2" },
           { "id": "3", "title": "Premium used cars", "backgroundColor": "#003087", "image": "car3" }
         ]
@@ -50,9 +50,9 @@
         "title": "Get loans",
         "itemStyle": "circular",
         "items": [
-          { "id": "7", "title": "Used car loan", "image": "loan1" },
-          { "id": "8", "title": "Loan against car", "image": "loan2" },
-          { "id": "9", "title": "Personal loan", "image": "loan3" }
+          { "id": "7", "title": "Used car loan"},
+          { "id": "8", "title": "Loan against car"},
+          { "id": "9", "title": "Personal loan" }
         ]
       },
       {
@@ -60,10 +60,10 @@
         "title": "Car check services",
         "itemStyle": "grid",
         "items": [
-          { "id": "10", "title": "New car PDI", "backgroundColor": "#FFF9C4", "image": "pdi" },
-          { "id": "11", "title": "Used car check", "backgroundColor": "#FFF9C4", "image": "check" },
-          { "id": "12", "title": "Vehicle history", "backgroundColor": "#FFF9C4", "image": "history" },
-          { "id": "13", "title": "Check challan", "backgroundColor": "#FFF9C4", "image": "challan" }
+          { "id": "10", "title": "New car PDI", "backgroundColor": "#FFF9C4" },
+          { "id": "11", "title": "Used car check", "backgroundColor": "#FFF9C4" },
+          { "id": "12", "title": "Vehicle history", "backgroundColor": "#FFF9C4" },
+          { "id": "13", "title": "Check challan", "backgroundColor": "#FFF9C4" }
         ]
       },
       {
@@ -71,10 +71,6 @@
         "label": "Loan Tenure",
         "options": ["1 Year", "2 Years", "3 Years", "5 Years"],
         "selectedIndex": 2
-      },
-      {
-        "type": "unknown",
-        "message": "This is an unknown component test"
       },
       {
         "type": "bottom_navigation",

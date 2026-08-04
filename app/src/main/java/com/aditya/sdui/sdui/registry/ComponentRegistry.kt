@@ -26,7 +26,6 @@ object ComponentRegistry {
             is UIComponent.TenureSelector -> TenureSelectorComponent(component)
             is UIComponent.BottomNavigation -> BottomNavComponent(component)
             is UIComponent.Unknown -> UnknownComponent(component.message ?: "Unknown Component")
-            // Fallback for types that might be added to the model but not handled here
             else -> UnknownComponent("Component ${component.type} not implemented")
         }
     }
