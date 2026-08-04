@@ -1,21 +1,8 @@
 # Cars24 SDUI
 
-A Server-Driven UI (SDUI) implementation built with **Kotlin** and **Jetpack Compose** that renders the Cars24 Home Screen dynamically from a JSON configuration instead of hardcoded UI.
+A Server-Driven UI (SDUI) implementation built with Kotlin and Jetpack Compose. The application renders the Cars24 Home Screen from a JSON configuration, allowing UI updates without changing the app code.
 
-## Overview
-
-Traditional Android applications require a new app release for every UI change. This project demonstrates how an SDUI architecture allows the backend to control the UI through JSON, enabling faster updates, feature rollouts, and A/B testing without changing the application code.
-
-## Features
-
-- Server-Driven UI architecture
-- Dynamic UI rendering from JSON
-- Reusable Jetpack Compose components
-- Component Registry pattern
-- JSON parsing with Kotlinx Serialization
-- MVVM architecture
-- Unknown component fallback
-- Extensible component system
+---
 
 ## Tech Stack
 
@@ -23,6 +10,8 @@ Traditional Android applications require a new app release for every UI change. 
 - Jetpack Compose
 - MVVM
 - Kotlinx Serialization
+
+---
 
 ## Project Structure
 
@@ -37,24 +26,20 @@ app/
 │   │   │   │   ├── model/
 │   │   │   │   ├── parser/
 │   │   │   │   └── repository/
-│   │   │   │
 │   │   │   ├── sdui/
 │   │   │   │   ├── registry/
 │   │   │   │   └── renderer/
-│   │   │   │
 │   │   │   ├── ui/
 │   │   │   │   ├── components/
 │   │   │   │   ├── screens/
 │   │   │   │   └── theme/
-│   │   │   │
 │   │   │   └── MainActivity.kt
-│   │   │
 │   │   └── res/
 ```
 
-This looks cleaner and is appropriate for the current phase of the project. You can always add an actions/ package later if you implement JSON-driven click/navigation actions.
+---
 
-## SDUI Workflow
+## Architecture
 
 ```text
 home_screen.json
@@ -63,7 +48,7 @@ home_screen.json
    JSON Parser
         │
         ▼
- Kotlin Models
+  Kotlin Models
         │
         ▼
  Screen Renderer
@@ -75,14 +60,98 @@ Component Registry
  Jetpack Compose UI
 ```
 
+---
 
-## Goals
+## Features
 
-- Render the complete Home Screen from JSON.
-- Create reusable Compose components.
-- Keep the architecture scalable and maintainable.
-- Minimize Android code changes for future UI updates.
+- Dynamic UI rendering from JSON
+- Reusable Compose components
+- Component Registry for mapping JSON to UI
+- MVVM architecture
+- Kotlinx Serialization for parsing
+- Graceful fallback for unknown components
+- Version-aware JSON support
 
-## License
+---
 
-This project is created for learning and demonstration purposes.
+## SDUI Concepts
+
+### Component Registry
+
+Each JSON component contains a `type`. The registry maps that type to the corresponding Compose component.
+
+Example:
+
+```json
+{
+  "type": "header"
+}
+```
+
+This keeps the renderer generic and makes adding new components simple.
+
+---
+
+### Actions
+
+User interactions are described in JSON instead of hardcoded logic.
+
+Examples include:
+
+- Navigation
+- Button clicks
+- Bottom sheet
+- State updates
+
+The renderer dispatches these actions to the appropriate handler.
+
+---
+
+### Unknown Component Fallback
+
+If the server sends a component that isn't supported by the current app version, the renderer skips it and displays a simple fallback instead of crashing.
+
+Example:
+
+```json
+{
+  "type": "new_component"
+}
+```
+
+Output:
+
+```
+Unsupported Component: new_component
+```
+
+---
+
+### Versioning
+
+Each screen payload includes a version.
+
+```json
+{
+  "screen": {
+    "version": "1.0"
+  }
+}
+```
+
+Older app versions continue rendering supported components while safely ignoring unsupported ones.
+
+---
+
+
+
+## Future Improvements
+
+- Remote API instead of local JSON
+- A/B testing support
+- Theme configuration from JSON
+- Remote feature flags
+- Component caching
+
+---
+
