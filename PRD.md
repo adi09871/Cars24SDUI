@@ -34,7 +34,6 @@ Build a reusable **Server Driven UI (SDUI)** system that renders the Cars24 Home
 - JSON Parser
 - Component Registry
 - Screen Renderer
-- Action Dispatcher
 
 ### Phase 5 - UI Components
 - Header
@@ -60,7 +59,6 @@ Compose UI
 ```
 
 ### Phase 7 - Enhancements
-- JSON Actions
 - Unknown Component Fallback
 - Version Support
 

@@ -75,7 +75,6 @@ Component Registry
 - Kotlinx Serialization for JSON parsing
 - Graceful fallback for unknown components
 - JSON version support
-- JSON-driven actions
 
 ---
 
@@ -94,34 +93,6 @@ Example:
 ```
 
 This keeps the renderer generic and makes it easy to add new components.
-
----
-
-### Actions
-
-User interactions are defined in JSON instead of hardcoded logic.
-
-Example:
-
-```json
-{
-  "type": "button",
-  "title": "Continue",
-  "action": {
-    "type": "navigate",
-    "destination": "details"
-  }
-}
-```
-
-Supported action types include:
-
-- Navigation
-- Button Click
-- Bottom Sheet
-- State Update
-
-The renderer interprets the action and performs the appropriate operation.
 
 ---
 

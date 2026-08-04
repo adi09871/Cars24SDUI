@@ -11,7 +11,6 @@ import com.aditya.sdui.ui.screens.HomeScreen
 import com.aditya.sdui.ui.theme.Cars24SDUITheme
 
 import androidx.activity.SystemBarStyle
-import androidx.compose.ui.graphics.toArgb
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

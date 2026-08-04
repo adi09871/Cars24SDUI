@@ -24,7 +24,6 @@ The SDUI system currently supports:
 - Vertical lists
 - Reusable sections
 - Nested components (Cards inside Sections)
-- JSON-based actions
 - Unknown component fallback
 - Basic version support
 

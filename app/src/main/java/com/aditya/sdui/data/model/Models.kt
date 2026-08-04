@@ -49,7 +49,7 @@ sealed class UIComponent {
         override val type: String = "section",
         val title: String,
         val titleBadge: String? = null,
-        val itemStyle: String = "default", // default, circular, colored
+        val itemStyle: String = "default",
         val items: List<Item>
     ) : UIComponent()
 

@@ -17,7 +17,7 @@ fun BottomNavComponent(nav: UIComponent.BottomNavigation) {
                 selected = index == nav.selectedIndex,
                 onClick = { /* Handle click */ },
                 icon = { 
-                    // Simple mapping for demo
+
                     val imageVector = when(item.icon) {
                         "home" -> Icons.Default.Home
                         "history" -> Icons.Default.DateRange

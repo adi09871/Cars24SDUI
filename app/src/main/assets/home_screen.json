@@ -73,10 +73,6 @@
         "selectedIndex": 2
       },
       {
-        "type": "unknown",
-        "message": "This is an unknown component test"
-      },
-      {
         "type": "bottom_navigation",
         "selectedIndex": 0,
         "items": [
