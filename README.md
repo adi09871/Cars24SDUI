@@ -174,6 +174,4 @@ The client validates the version before rendering. Unsupported components are ig
 
 ---
 
-## License
 
-This project was built as part of the **Cars24 Android Assignment** to demonstrate a reusable Server-Driven UI architecture using Jetpack Compose.
