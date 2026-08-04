@@ -1,6 +1,6 @@
 # Cars24 SDUI
 
-A Server-Driven UI (SDUI) implementation built with Kotlin and Jetpack Compose. The application renders the Cars24 Home Screen from a JSON configuration, allowing UI updates without changing the app code.
+A Server-Driven UI (SDUI) implementation built with **Kotlin** and **Jetpack Compose**. The application renders the Cars24 Home Screen from a JSON configuration instead of hardcoded UI, making it easier to update the interface without releasing a new app version.
 
 ---
 
@@ -26,14 +26,18 @@ app/
 │   │   │   │   ├── model/
 │   │   │   │   ├── parser/
 │   │   │   │   └── repository/
+│   │   │   │
 │   │   │   ├── sdui/
 │   │   │   │   ├── registry/
 │   │   │   │   └── renderer/
+│   │   │   │
 │   │   │   ├── ui/
 │   │   │   │   ├── components/
 │   │   │   │   ├── screens/
 │   │   │   │   └── theme/
+│   │   │   │
 │   │   │   └── MainActivity.kt
+│   │   │
 │   │   └── res/
 ```
 
@@ -65,20 +69,21 @@ Component Registry
 ## Features
 
 - Dynamic UI rendering from JSON
-- Reusable Compose components
-- Component Registry for mapping JSON to UI
+- Reusable Jetpack Compose components
 - MVVM architecture
-- Kotlinx Serialization for parsing
+- Component Registry for dynamic rendering
+- Kotlinx Serialization for JSON parsing
 - Graceful fallback for unknown components
-- Version-aware JSON support
+- JSON version support
+- JSON-driven actions
 
 ---
 
-## SDUI Concepts
+## SDUI Design
 
 ### Component Registry
 
-Each JSON component contains a `type`. The registry maps that type to the corresponding Compose component.
+Each UI component in the JSON contains a `type`. The registry maps the component type to its corresponding Jetpack Compose implementation.
 
 Example:
 
@@ -88,28 +93,41 @@ Example:
 }
 ```
 
-This keeps the renderer generic and makes adding new components simple.
+This keeps the renderer generic and makes it easy to add new components.
 
 ---
 
 ### Actions
 
-User interactions are described in JSON instead of hardcoded logic.
+User interactions are defined in JSON instead of hardcoded logic.
 
-Examples include:
+Example:
+
+```json
+{
+  "type": "button",
+  "title": "Continue",
+  "action": {
+    "type": "navigate",
+    "destination": "details"
+  }
+}
+```
+
+Supported action types include:
 
 - Navigation
-- Button clicks
-- Bottom sheet
-- State updates
+- Button Click
+- Bottom Sheet
+- State Update
 
-The renderer dispatches these actions to the appropriate handler.
+The renderer interprets the action and performs the appropriate operation.
 
 ---
 
 ### Unknown Component Fallback
 
-If the server sends a component that isn't supported by the current app version, the renderer skips it and displays a simple fallback instead of crashing.
+If the backend sends a component that the current app version doesn't support, the application skips it safely instead of crashing.
 
 Example:
 
@@ -119,17 +137,19 @@ Example:
 }
 ```
 
-Output:
+Fallback:
 
-```
+```text
 Unsupported Component: new_component
 ```
+
+This allows newer server payloads to remain compatible with older app versions.
 
 ---
 
 ### Versioning
 
-Each screen payload includes a version.
+Each screen contains a version number.
 
 ```json
 {
@@ -139,19 +159,21 @@ Each screen payload includes a version.
 }
 ```
 
-Older app versions continue rendering supported components while safely ignoring unsupported ones.
+The client validates the version before rendering. Unsupported components are ignored gracefully, allowing older app versions to work with newer server payloads.
 
 ---
-
 
 
 ## Future Improvements
 
-- Remote API instead of local JSON
-- A/B testing support
+- Fetch JSON from a remote API
 - Theme configuration from JSON
 - Remote feature flags
 - Component caching
+- A/B testing support
 
 ---
 
+## License
+
+This project was built as part of the **Cars24 Android Assignment** to demonstrate a reusable Server-Driven UI architecture using Jetpack Compose.
